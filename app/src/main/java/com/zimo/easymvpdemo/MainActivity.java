@@ -4,7 +4,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
+import com.donkingliang.labels.LabelsView;
 import com.zimo.easymvpdemo.base.MvpActivity_9;
+
+import java.util.ArrayList;
 
 //1234567
 public class MainActivity extends MvpActivity_9<NewsListView_9, NewsListPresenter_9> implements NewsListView_9 {
@@ -12,8 +15,43 @@ public class MainActivity extends MvpActivity_9<NewsListView_9, NewsListPresente
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //111
+        //111222
         setContentView(R.layout.activity_main);
+        LabelsView labelsView = (LabelsView) findViewById(R.id.labels);
+        ArrayList<String> label = new ArrayList<>();
+        label.add("Android");
+        label.add("IOS");
+        label.add("前端");
+        label.add("后台");
+        label.add("微信开发");
+        label.add("游戏开发");
+        label.add("Java");
+        label.add("JavaScript");
+        label.add("C++");
+        label.add("PHP");
+        label.add("Python");
+        label.add("Swift");
+        labelsView.setSelects(3);
+        labelsView.setLabels(label); //直接设置一个字符串数组就可以了。
+
+        //标签的点击监听
+        labelsView.setOnLabelClickListener(new LabelsView.OnLabelClickListener() {
+            @Override
+            public void onLabelClick(View label, String labelText, int position) {
+               // Toast.makeText(MainActivity.this,labelText+position,Toast.LENGTH_SHORT).show();
+                //label是被点击的标签，labelText是标签的文字，position是标签的位置。
+            }
+        });
+        //标签的选中监听
+        labelsView.setOnLabelSelectChangeListener(new LabelsView.OnLabelSelectChangeListener() {
+            @Override
+            public void onLabelSelectChange(View label, String labelText, boolean isSelect, int position) {
+                Toast.makeText(MainActivity.this,"222222"+labelText+position,Toast.LENGTH_SHORT).show();
+                //label是被点击的标签，labelText是标签的文字，isSelect是是否选中，position是标签的位置。
+            }
+        });
+
+
     }
 
     //普通代码结构->入门级别代码
