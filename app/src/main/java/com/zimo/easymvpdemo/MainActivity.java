@@ -12,6 +12,7 @@ public class MainActivity extends MvpActivity_9<NewsListView_9, NewsListPresente
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //111
         setContentView(R.layout.activity_main);
     }
 
