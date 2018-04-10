@@ -8,7 +8,7 @@ import com.zimo.easymvpdemo.base.MvpActivity_9;
 
 
 public class MainActivity extends MvpActivity_9<NewsListView_9, NewsListPresenter_9> implements NewsListView_9 {
-
+    //222
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
